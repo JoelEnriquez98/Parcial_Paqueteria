@@ -63,7 +63,7 @@
             </div>
             <div class="col-lg-7 col-md-12 col-sm-12 col-">
                 <div class="table-responsive overflow">
-                    <asp:GridView ID="GVPackages" CssClass="table table-bordered table-condensed table-responsive table-hover" runat="server" AllowPaging="True" AutoGenerateColumns="False" OnRowCommand="GVPackages_RowCommand">
+                    <asp:GridView Width="100%" AllowUserToResizeColumns="true" ID="GVPackages" CssClass="table table-bordered table-condensed table-responsive table-hover" runat="server" AllowPaging="True" AutoGenerateColumns="False" OnRowCommand="GVPackages_RowCommand">
                         <Columns>
                             <asp:BoundField DataField="codigo_paquete" HeaderText="Codigo" SortExpression="codigo_paquete"></asp:BoundField>
                             <asp:BoundField DataField="descripcion_paquete" HeaderText="Descripcion" SortExpression="descripcion_paquete"></asp:BoundField>
@@ -82,4 +82,14 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#<%=GVPackages.ClientID %>').colResizable({
+                liveDrag: true,
+                gripInnerHtml: "<div class='grip'></div>",
+                draggingClass: "dragging",
+            });
+        });
+    </script>
 </asp:Content>

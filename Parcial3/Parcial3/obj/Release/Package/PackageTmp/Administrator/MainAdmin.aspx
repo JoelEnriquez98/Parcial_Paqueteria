@@ -16,19 +16,19 @@
             <!-- The slideshow/carousel -->
             <div class="carousel-inner size">
                 <div class="carousel-item active">
-                    <img src="../Files/Images/img1.png" height="600px" alt="Los Angeles" class="d-block w-100">
+                    <img src="../Files/Images/img1.png"  alt="Los Angeles" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="../Files/Images/img2.jpg" height="600px" alt="Chicago" class="d-block w-100">
+                    <img src="../Files/Images/img2.jpg" alt="Chicago" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="../Files/Images/img3.jpg" height="600px" alt="New York" class="d-block w-100">
+                    <img src="../Files/Images/img3.jpg" alt="New York" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="../Files/Images/img4.png" height="600px" alt="New York" class="d-block w-100">
+                    <img src="../Files/Images/img4.png"  alt="New York" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="../Files/Images/img5.jpg" height="600px" alt="New York" class="d-block w-100">
+                    <img src="../Files/Images/img5.jpg"  alt="New York" class="d-block w-100">
                 </div>
             </div>
 

@@ -7155,11 +7155,11 @@ namespace Parcial3 {
             
             private global::System.Data.DataColumn columndpi;
             
-            private global::System.Data.DataColumn columnfecha_salida;
-            
-            private global::System.Data.DataColumn columnfecha_retorno;
-            
             private global::System.Data.DataColumn columnnombre_camionero;
+            
+            private global::System.Data.DataColumn columnsalida;
+            
+            private global::System.Data.DataColumn columnretorno;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -7260,25 +7260,25 @@ namespace Parcial3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn fecha_salidaColumn {
-                get {
-                    return this.columnfecha_salida;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn fecha_retornoColumn {
-                get {
-                    return this.columnfecha_retorno;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn nombre_camioneroColumn {
                 get {
                     return this.columnnombre_camionero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn salidaColumn {
+                get {
+                    return this.columnsalida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn retornoColumn {
+                get {
+                    return this.columnretorno;
                 }
             }
             
@@ -7319,7 +7319,7 @@ namespace Parcial3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Historial_Conduccion_EditarRow AddHistorial_Conduccion_EditarRow(string estado_inicial_vehiculo, string estado_final_vehiculo, string matricula, int kilometraje_inicial, int kilometraje_final, bool disponibilidad_vehiculo, string dpi, System.DateTime fecha_salida, System.DateTime fecha_retorno, string nombre_camionero) {
+            public Historial_Conduccion_EditarRow AddHistorial_Conduccion_EditarRow(string estado_inicial_vehiculo, string estado_final_vehiculo, string matricula, int kilometraje_inicial, int kilometraje_final, bool disponibilidad_vehiculo, string dpi, string nombre_camionero, string salida, string retorno) {
                 Historial_Conduccion_EditarRow rowHistorial_Conduccion_EditarRow = ((Historial_Conduccion_EditarRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -7330,9 +7330,9 @@ namespace Parcial3 {
                         kilometraje_final,
                         disponibilidad_vehiculo,
                         dpi,
-                        fecha_salida,
-                        fecha_retorno,
-                        nombre_camionero};
+                        nombre_camionero,
+                        salida,
+                        retorno};
                 rowHistorial_Conduccion_EditarRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHistorial_Conduccion_EditarRow);
                 return rowHistorial_Conduccion_EditarRow;
@@ -7372,9 +7372,9 @@ namespace Parcial3 {
                 this.columnkilometraje_final = base.Columns["kilometraje_final"];
                 this.columndisponibilidad_vehiculo = base.Columns["disponibilidad_vehiculo"];
                 this.columndpi = base.Columns["dpi"];
-                this.columnfecha_salida = base.Columns["fecha_salida"];
-                this.columnfecha_retorno = base.Columns["fecha_retorno"];
                 this.columnnombre_camionero = base.Columns["nombre_camionero"];
+                this.columnsalida = base.Columns["salida"];
+                this.columnretorno = base.Columns["retorno"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7396,12 +7396,12 @@ namespace Parcial3 {
                 base.Columns.Add(this.columndisponibilidad_vehiculo);
                 this.columndpi = new global::System.Data.DataColumn("dpi", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndpi);
-                this.columnfecha_salida = new global::System.Data.DataColumn("fecha_salida", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_salida);
-                this.columnfecha_retorno = new global::System.Data.DataColumn("fecha_retorno", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_retorno);
                 this.columnnombre_camionero = new global::System.Data.DataColumn("nombre_camionero", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre_camionero);
+                this.columnsalida = new global::System.Data.DataColumn("salida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsalida);
+                this.columnretorno = new global::System.Data.DataColumn("retorno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnretorno);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncodigo_control,
                                 this.columnmatricula,
@@ -7420,9 +7420,12 @@ namespace Parcial3 {
                 this.columndisponibilidad_vehiculo.AllowDBNull = false;
                 this.columndpi.AllowDBNull = false;
                 this.columndpi.MaxLength = 13;
-                this.columnfecha_salida.AllowDBNull = false;
                 this.columnnombre_camionero.AllowDBNull = false;
                 this.columnnombre_camionero.MaxLength = 100;
+                this.columnsalida.ReadOnly = true;
+                this.columnsalida.MaxLength = 4000;
+                this.columnretorno.ReadOnly = true;
+                this.columnretorno.MaxLength = 4000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9748,40 +9751,46 @@ namespace Parcial3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime fecha_salida {
-                get {
-                    return ((global::System.DateTime)(this[this.tableHistorial_Conduccion_Editar.fecha_salidaColumn]));
-                }
-                set {
-                    this[this.tableHistorial_Conduccion_Editar.fecha_salidaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime fecha_retorno {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableHistorial_Conduccion_Editar.fecha_retornoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_retorno\' de la tabla \'Historial_Conduccion_Editar\' " +
-                                "es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHistorial_Conduccion_Editar.fecha_retornoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string nombre_camionero {
                 get {
                     return ((string)(this[this.tableHistorial_Conduccion_Editar.nombre_camioneroColumn]));
                 }
                 set {
                     this[this.tableHistorial_Conduccion_Editar.nombre_camioneroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string salida {
+                get {
+                    try {
+                        return ((string)(this[this.tableHistorial_Conduccion_Editar.salidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'salida\' de la tabla \'Historial_Conduccion_Editar\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableHistorial_Conduccion_Editar.salidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string retorno {
+                get {
+                    try {
+                        return ((string)(this[this.tableHistorial_Conduccion_Editar.retornoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'retorno\' de la tabla \'Historial_Conduccion_Editar\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHistorial_Conduccion_Editar.retornoColumn] = value;
                 }
             }
             
@@ -9811,14 +9820,26 @@ namespace Parcial3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isfecha_retornoNull() {
-                return this.IsNull(this.tableHistorial_Conduccion_Editar.fecha_retornoColumn);
+            public bool IssalidaNull() {
+                return this.IsNull(this.tableHistorial_Conduccion_Editar.salidaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setfecha_retornoNull() {
-                this[this.tableHistorial_Conduccion_Editar.fecha_retornoColumn] = global::System.Convert.DBNull;
+            public void SetsalidaNull() {
+                this[this.tableHistorial_Conduccion_Editar.salidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsretornoNull() {
+                return this.IsNull(this.tableHistorial_Conduccion_Editar.retornoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetretornoNull() {
+                this[this.tableHistorial_Conduccion_Editar.retornoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15304,7 +15325,8 @@ WHERE (Destinatario.codigo_destinatario = @destinatario)";
                   Historial_conduccion.kilometraje_inicial, Historial_conduccion.kilometraje_final, Historial_conduccion.disponibilidad_vehiculo, Camionero.dpi, Camionero.nombre_camionero
 FROM     Camion INNER JOIN
                   Historial_conduccion ON Camion.matricula = Historial_conduccion.matricula INNER JOIN
-                  Camionero ON Historial_conduccion.dpi = Camionero.dpi";
+                  Camionero ON Historial_conduccion.dpi = Camionero.dpi
+ORDER BY Historial_conduccion.codigo_control;";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -15949,9 +15971,9 @@ FROM     Camion INNER JOIN
             tableMapping.ColumnMappings.Add("kilometraje_final", "kilometraje_final");
             tableMapping.ColumnMappings.Add("disponibilidad_vehiculo", "disponibilidad_vehiculo");
             tableMapping.ColumnMappings.Add("dpi", "dpi");
-            tableMapping.ColumnMappings.Add("fecha_salida", "fecha_salida");
-            tableMapping.ColumnMappings.Add("fecha_retorno", "fecha_retorno");
             tableMapping.ColumnMappings.Add("nombre_camionero", "nombre_camionero");
+            tableMapping.ColumnMappings.Add("salida", "salida");
+            tableMapping.ColumnMappings.Add("retorno", "retorno");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -15968,12 +15990,13 @@ FROM     Camion INNER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT Historial_conduccion.codigo_control, Historial_conduccion.fecha_salida, Historial_conduccion.fecha_retorno, Historial_conduccion.estado_inicial_vehiculo, Historial_conduccion.estado_final_vehiculo, Historial_conduccion.matricula, 
-                  Historial_conduccion.kilometraje_inicial, Historial_conduccion.kilometraje_final, Historial_conduccion.disponibilidad_vehiculo, Camionero.dpi, Camionero.nombre_camionero
+            this._commandCollection[0].CommandText = @"SELECT Historial_conduccion.codigo_control, FORMAT(Historial_conduccion.fecha_salida, 'yyyy-MM-dd', 'en-US') AS salida, FORMAT(Historial_conduccion.fecha_retorno, 'yyyy-MM-dd', 'en-US') AS retorno, 
+                  Historial_conduccion.estado_inicial_vehiculo, Historial_conduccion.estado_final_vehiculo, Historial_conduccion.matricula, Historial_conduccion.kilometraje_inicial, Historial_conduccion.kilometraje_final, 
+                  Historial_conduccion.disponibilidad_vehiculo, Camionero.dpi, Camionero.nombre_camionero
 FROM     Camion INNER JOIN
                   Historial_conduccion ON Camion.matricula = Historial_conduccion.matricula INNER JOIN
                   Camionero ON Historial_conduccion.dpi = Camionero.dpi
-WHERE (Historial_conduccion.codigo_control = @codigo_control)";
+WHERE  (Historial_conduccion.codigo_control = @codigo_control)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo_control", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "codigo_control", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

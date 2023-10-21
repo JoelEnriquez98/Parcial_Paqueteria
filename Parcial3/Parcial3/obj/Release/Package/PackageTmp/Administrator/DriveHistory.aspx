@@ -8,7 +8,7 @@
             <div class="col-lg-3 col-md-9">
                 <div class="w-100 d-flex flex-column align-items-center justify-content-around">
                     <div class="text-align-center mb-4">
-                        <h6 class="display-6">Registar Historial Conduccion</h6>
+                        <h6 class="display-6 text-center">Registar Historial Conduccion</h6>
                     </div>
                     <div class="row mb-2">
                         <div class="d-flex justify-content-evenly">
