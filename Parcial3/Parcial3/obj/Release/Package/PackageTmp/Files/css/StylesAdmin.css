@@ -1,0 +1,29 @@
+﻿body {
+}
+
+
+@media screen and (min-width: 992px) {
+    .navbar-screen {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.images-container {
+    height: 100vh;
+}
+
+.overflow {
+    overflow: auto;
+    height: 70vh;
+}
+
+.center-grid {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.size {
+    
+    height: 200px !important;
+}

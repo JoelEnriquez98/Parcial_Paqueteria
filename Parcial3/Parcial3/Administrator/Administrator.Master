@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Administrator.master.cs" Inherits="Parcial3.Admin.Administrator" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Main Admin</title>
+    <script src="https://kit.fontawesome.com/2b87f33b9b.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="../Files/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Files/css/StylesAdmin.css" rel="stylesheet" />
+    <link href="../Files/css/Styles.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <header>
+                <nav class="navbar bg-white navbar-screen navbar-expand-lg px-sm-0 px-md-5 px-lg-5">
+                    <div class="container-fluid px-sm-0 px-lg-5">
+                        <a class="navbar-brand font-primary" href="MainAdmin.aspx">
+                            <img src="https://images.vexels.com/media/users/3/200959/isolated/preview/737c231918561684922172c250fd94c4-icono-de-envio-gratuito.png" alt="Logo" height="50" class="d-inline-block align-text-top w-5" />
+                        </a>
+                        <asp:Label CssClass="mr-2 accordion-header font-weight-light" runat="server" ID="LabelNameAdmin"></asp:Label>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse navbar-screen" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarTrucks" role="button" data-bs-toggle="dropdown" aria-expanded="false">Camiones</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="CRUDTruck.aspx">Agregar/Editar</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Marca mas usada</a></li>
+                                        <li><a class="dropdown-item" href="#">Camiones con mas potencia</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarPackages" role="button" data-bs-toggle="dropdown" aria-expanded="false">Paquetes</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="CRUDPackage.aspx">Agregar/Editar Paquetes</a></li>
+                                        <li><a class="dropdown-item" href="CRUDAddressee.aspx">Agregar/Editar Destinatarios</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Destinatarios mayor paqueteria</a></li>
+                                        <li><a class="dropdown-item" href="#">Aldeas con mas paquetes</a></li>
+                                        <li><a class="dropdown-item" href="#">Aldeas con menos paquetes</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarTruckers" role="button" data-bs-toggle="dropdown" aria-expanded="false">Camioneros</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="CRUDTrucker.aspx">Agregar/Editar</a></li>
+                                        <li><a class="dropdown-item" href="DriveHistory.aspx">Historial Conduccion</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Camioneros mas viajes</a></li>
+                                        <li><a class="dropdown-item" href="#">Camioneros menos viajes</a></li>
+                                        <li><a class="dropdown-item" href="#">Camioneros mayor kilometraje</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn btn-danger mx-3" aria-disabled="true" href="../Login.aspx">Cerrar Sesion</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <footer class="text-center text-lg-start bg-light text-muted mt-5">
+                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                    © 2023 Copyright | Paqueteria Expresso
+                </div>
+            </footer>
+        </div>
+    </form>
+    <script src="../Files/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
